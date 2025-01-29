@@ -20,3 +20,25 @@ input, button {
     padding: 10px;
     margin: 10px;
 }
+
+
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.forecast-item {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+    display: inline-block;
+}
+
+.forecast-item p {
+  margin: 5px 0;
+}

@@ -13,8 +13,23 @@
             <p>Wind Speed: {{ weather.wind_speed }} m/s</p>
             <p>Pressure: {{ weather.pressure }} hPa</p>
             <img src="https://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
-        {% elif error %}
-            <p>{{ error }}</p>
-        {% endif %}
-    </section>
+          
+            <h2>5-Day Forecast</h2>
+    {% if forecast %}
+      <div class="forecast">
+        {% for item in forecast %}
+          <div class="forecast-item">
+            <p><strong>{{ item.date }}</strong></p>
+            <p>Temperature: {{ item.temperature }}°C</p>
+            <p>Description: {{ item.description }}</p>
+            <img src="https://openweathermap.org/img/wn/{{ item.icon }}.png" alt="Weather icon">
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>{{ forecast_error }}</p>
+    {% endif %}
+  {% endif %}
 {% endblock %}
+
+
