@@ -1,0 +1,22 @@
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('/static/images/map.webp');
+    background-size: cover;
+}
+.weather-container {
+  background-color: #333;  /* Dark background */
+  color: white;            /* Light text */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Soft shadow */
+    display: inline-block;
+}
+
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="weather-container">
+        <form method="get" action="{% url 'weather_home' %}">
+            <input type="text" name="city" placeholder="Enter city" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if weather %}
+            <h2>Weather in {{ weather.city }}</h2>
+            <p>Temperature: {{ weather.temperature }}°C</p>
+            <p>Description: {{ weather.description }}</p>
+            <p>Humidity: {{ weather.humidity }}%</p>
+            <p>Wind Speed: {{ weather.wind_speed }} m/s</p>
+            <p>Pressure: {{ weather.pressure }} hPa</p>
+            <img src="https://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
+        {% elif error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </section>
+{% endblock %}
